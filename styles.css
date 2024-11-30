@@ -1,131 +1,154 @@
-/* Global Variables */
+/* Global Color Variables */
 :root {
-  --primary-color: #719192; /* Dark Navy Blue */
-  --secondary-color: #EAEAEA; /* Light Gray */
-  --accent-color-navy: #2e587c; /* Dark Navy */
-  --accent-color-purple: #3a3e3f; /* Dark Purple */
-  --text-color: #3a3e3f; /* Dark Text */
-  --button-color: #3a3e3f; /* Button Color */
-  --button-hover-color: #c7884d; /* Button Hover Color */
+  --primary-color: #719192;     /* Soft Navy Blue background */
+  --secondary-color: #EAEAEA;   /* Light Gray for sidebar */
+  --accent-color-navy: #2e587c; /* Accent Navy Blue */
+  --accent-color-purple: #3a3e3f; /* Dark Text and Button Color */
+  --text-color: #3a3e3f;        /* Main text color */
+  --button-color: #3a3e3f;      /* Default button color */
+  --button-hover-color: #c7884d; /* Button hover state */
 }
 
-/* Basic Body Styling */
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--primary-color); /* Set background color */
-  color: var(--text-color); /* Text color */
-  box-sizing: border-box; /* Ensure consistent box sizing */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-h2 {
-  font-size: 2.5rem;
-}
-
+/* Global Reset and Base Styling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Navbar Styling */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color-navy);
+}
+
+/* Navigation Styling */
 #navbar {
-  background-color: var(--primary-color); /* Set navbar background */
-  padding: 1rem; /* Navbar padding */
-  position: fixed; /* Fixed position */
+  background-color: var(--primary-color);
+  padding: 1rem;
+  position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10; /* Ensure navbar is on top */
+  z-index: 10;
 }
 
 #navbar .container {
-  display: flex; /* Flexbox for centering navbar items */
-  justify-content: left; /* Center navbar items horizontally */
+  display: flex;
+  justify-content: left;
 }
 
 #navbar ul {
-  list-style: none; /* Remove default list styling */
-  display: flex; /* Flexbox layout for navbar items */
-  justify-content: center; /* Center navbar links */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
 }
 
 #navbar ul li {
-  margin-left: 20px; /* Add spacing between list items */
+  margin-left: 20px;
 }
 
 #navbar ul li a {
-  color: #fff; /* Set link color */
-  text-decoration: none; /* Remove underline */
-  font-weight: 600; /* Make text bold */
-  text-transform: uppercase; /* Uppercase text */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 #navbar ul li a:hover {
-  color: var(--accent-color-navy); /* Hover effect for navbar links */
+  color: var(--accent-color-navy);
 }
 
 /* Main Content Layout */
 .main-content {
-  display: flex; /* Flexbox layout for main content */
-  margin-top: 80px; /* Adjust to prevent overlap with fixed navbar */
+  display: flex;
+  margin-top: 80px;
 }
 
-/* Sidebar Styling (About Me Section) */
+/* Sidebar Styling */
 .sidebar {
-  width: 300px;  /* Fixed width for the sidebar */
-  padding: 20px; /* Padding for the sidebar */
-  background-color: var(--secondary-color); /* Sidebar background */
-  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  width: 300px;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  flex-shrink: 0;
 }
 
-/* Content Area Styling (Other Sections) */
-.content-area {
-  flex-grow: 1; /* Allow content area to grow */
-  padding: 20px; /* Padding for content area */
-  background-color: #fff; /* White background for content */
+/* New Styles for About Me List */
+#about-me ul {
+  text-align: left;
+  padding-left: 0; /* Removes default padding */
 }
 
-h2 {
-  color: var(--accent-color-navy); /* Set color for h2 headings */
+#about-me ul li {
+  list-style-position: inside; /* Moves list markers inside */
+  padding-left: 0;
 }
 
-/* Profile Image under About Me Section */
+.sidebar li {
+  display: flex;
+  align-items: flex-start;
+}
+
+.sidebar ul li a {
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  align-content: flex-start;
+}
+
+#about-me ul li a:hover {
+  color: var(--accent-color-navy);
+}
+
+/* Profile Image */
 #about-me img {
-  width: 150px; /* Set width of the icon */
-  height: 150px; /* Set height of the icon */
-  border-radius: 50%; /* Make the icon round */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
-  margin: 20px auto; /* Center the icon with margin */
-  display: block; /* Make sure the image is a block element (centering) */
-  border: 3px solid var(--accent-color-navy); /* Optional: Add a border around the icon */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px auto;
+  display: block;
+  border: 3px solid var(--accent-color-navy);
+}
+
+/* Content Area */
+.content-area {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
 }
 
 /* Button Styling */
 .btn {
-  background-color: var(--button-color); /* Set button background */
-  color: #fff; /* Set button text color */
-  padding: 10px 20px; /* Button padding */
-  text-decoration: none; /* Remove underline from link */
-  border-radius: 5px; /* Rounded corners */
-  display: inline-block; /* Display as inline-block */
-  transition: background-color 0.3s ease; /* Smooth hover transition */
+  background-color: var(--button-color);
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: var(--button-hover-color); /* Button hover effect */
+  background-color: var(--button-hover-color);
 }
 
-#career h2 {
-  font-size: 2.5rem;
-}
-
-/* Project Section Styling */
+/* Project Section */
 #projectsflex {
-  display: flex; /* Enables flex layout */
-  flex-direction: row; /* Optional, as it's the default behavior, but it makes it clear */
-  gap: 20px; /* Optional, for spacing between items */
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .project {
@@ -145,10 +168,6 @@ h2 {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-#projects h2 {
-  font-size: 2.5rem;
-}
-
 .project h3 {
   font-size: 1.6rem;
 }
@@ -158,69 +177,30 @@ h2 {
   margin-bottom: 20px;
 }
 
-.project .btn {
-  display: inline-block;
-  background-color: var(--button-color);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.project .btn:hover {
-  background-color: var(--button-hover-color);
-}
-
-/* Flexbox for Horizontal Layout */
+/* Projects Container */
 #projects .container {
-  display: flex;              /* Enables Flexbox */
-  flex-wrap: wrap;            /* Allows wrapping if there's not enough space */
-  justify-content: space-evenly; /* Spaces the project boxes evenly */
-  gap: 1px;                   /* Adds some spacing between the items */
-  margin-top: 80px;           /* Optional: Adjust if navbar is fixed */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1px;
+  margin-top: 80px;
 }
 
-/* Individual Project Box */
 #projects .project {
-  width: 30%;                 /* Each project takes 30% of the container's width */
-  background-color: #fff;     /* White background for the project box */
-  padding: 20px;              /* Padding inside the project box */
-  box-sizing: border-box;     /* Includes padding within the width */
-  border-radius: 8px;         /* Optional: rounded corners for aesthetic */
+  width: 30%;
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
 }
 
-/* Basic Body Styling */
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--primary-color); /* Set background color */
-  color: var(--text-color); /* Text color */
-  box-sizing: border-box; /* Ensure consistent box sizing */
-}
-
-/* Navbar Styling */
-#navbar {
-  background-color: var(--primary-color); /* Set navbar background */
-  padding: 1rem; /* Navbar padding */
-  position: fixed; /* Fixed position */
-  top: 0;
-  width: 100%;
-  z-index: 10; /* Ensure navbar is on top */
-}
-
-#Blog h3 {
-  color: var(--accent-color-purple)
-}
-
-/* Responsive Adjustments for Small Screens */
+/* Responsive Design */
 @media (max-width: 768px) {
   section {
-    page-break-after: always; /* Forces a page break after every <section> element */
+    page-break-after: always;
   }
+  
   #projects .project {
-    width: 80%;                /* Make each project box take 80% width on small screens */
+    width: 80%;
   }
 }
